@@ -3,10 +3,10 @@ pipeline {
 	stages {
 	    stage("Build") {
 	      steps {
-		      if (env.BRANCH_NAME=="main") {
+		      if (BRANCH_NAME=="main") {
 		      echo "Building the application"
 		      }
-		      else if (env.BRANCH_NAME=="dev") {
+		      else if (BRANCH_NAME=="dev") {
 			      echo " Building the appication in dev environment"
 			       }
 	      }
