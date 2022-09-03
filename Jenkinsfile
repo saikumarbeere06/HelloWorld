@@ -2,13 +2,13 @@ pipeline {
     agent any
 	stages {
 	    stage("Build") {
+		    when {
+			    expression {
+				    BRANCH_NAME == 'main'
+			    }
+		    }
 	      steps {
-		      if (BRANCH_NAME=="main") {
 		      echo "Building the application"
-		      }
-		      else if (BRANCH_NAME=="dev") {
-			      echo " Building the appication in dev environment"
-			       }
 	      }
 	    }
 	    stage("Test") {
